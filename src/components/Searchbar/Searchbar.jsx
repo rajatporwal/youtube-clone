@@ -44,6 +44,7 @@ const Searchbar = (props) => {
       <div className="header__search">
         <input
           type="text"
+          data-testid="search-input"
           placeholder="Search"
           value={searchText || ''}
           onKeyDown={(event) => handleSubmit(event)}
@@ -51,6 +52,7 @@ const Searchbar = (props) => {
         />
         <button
           type="button"
+          data-testid="youtube-search-button"
           disabled={!searchText}
           onClick={handleSearchClick}
         >

@@ -7,17 +7,16 @@ test('Youtube search', () => {
   expect(title).toBeInTheDocument();
 });
 
-
 test('Youtube search with text', () => {
-    render(<Searchbar searchChangeHandler={()=>{}}/>)
-    const inputField = screen.getByLabelText('youtube-search');
-    fireEvent.change(inputField, {target: {value: 'react js'}})
-    expect(inputField.value).toBe('react js')
+    render(<Searchbar searchChangeHandler={() => {}} />)
+    const inputField = screen.getByTestId('search-input');
+    fireEvent.change(inputField, { target: { value: 'react js' } });
+    expect(inputField.value).toBe('react js');
 })
 
 test('Youtube search with text and then remove text should empty the input field', () => {
     render(<Searchbar searchChangeHandler={()=>{}}/>)
-    const inputField = screen.getByLabelText('youtube-search');
+    const inputField = screen.getByTestId('search-input');
     fireEvent.change(inputField, {target: {value: 'react js'}})
     expect(inputField.value).toBe('react js')
     fireEvent.change(inputField, {target: {value: ''}})
@@ -26,7 +25,7 @@ test('Youtube search with text and then remove text should empty the input field
 
 test('Youtube search with enter key', () => {
     render(<Searchbar searchChangeHandler={()=>{}}/>)
-    const inputField = screen.getByLabelText('youtube-search');
+    const inputField = screen.getByTestId('search-input');
     fireEvent.change(inputField, {target: {value: 'react js'}})
     expect(inputField.value).toBe('react js')
     fireEvent.keyDown(inputField, {key: 'Enter', code: 'Enter', charCode: 13})
@@ -35,9 +34,9 @@ test('Youtube search with enter key', () => {
 })
 
 test('Youtube Search button', () => {
-    render(<Searchbar searchChangeHandler={()=>{}}/>)
+    render(<Searchbar searchChangeHandler={() => {}} />)
     const inputField = screen.getByTestId('search-input');
-    const searchButton = screen.getByLabelText('youtube-search-button');
-    fireEvent.click(searchButton)
-    expect(inputField).not.toHaveFocus()
+    const searchButton = screen.getByTestId('youtube-search-button');
+    fireEvent.click(searchButton);
+    expect(inputField).not.toHaveFocus();
 })

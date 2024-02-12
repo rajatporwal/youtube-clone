@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { getVideosList } from "../service/service";
-// import youtubeList from '../../mocks/youtubeList.json'
 
 const defaultData = {
   videos: [],

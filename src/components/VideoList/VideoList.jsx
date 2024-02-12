@@ -32,7 +32,7 @@ const VideoList = (props) => {
   };
 
   return (
-    <div className={`list-container ${props?.selectedVideo ? 'shrink' : ''}`}>
+    <div data-testid="video-list"  className={`list-container ${props?.selectedVideo ? 'shrink' : ''}`}>
       <AutoSizer disableHeight={true}>
         {({ width }) => (
           <WindowScroller>
