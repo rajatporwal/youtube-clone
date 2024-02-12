@@ -8,7 +8,7 @@ const VideoDescription = ({ snippet }) => {
       <div aria-label="Video Description container" className="video-description-container">
         <div aria-label="Video Channel Title" className="video-description">{snippet.channelTitle}</div>
         <div aria-label="Video Published" className="video-description">
-          Published : {formatTime(snippet.publishTime)}
+          Published : {formatTime(snippet.publishTime || snippet.publishedAt)}
         </div>
       </div>
     </div>

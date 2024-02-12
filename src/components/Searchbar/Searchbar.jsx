@@ -60,7 +60,7 @@ const Searchbar = (props) => {
         </button>
       </div>
 
-      <div className="">
+      <div className="icons__container">
         <FontAwesomeIcon
           className="header__icons"
           icon={faVideo}
