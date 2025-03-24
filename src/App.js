@@ -1,25 +1,20 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import Searchbar from "./components/Searchbar/Searchbar";
-import Results from "./components/Results/Results";
-import "./App.css";
+import logo from './logo.svg';
+import './App.css';
 
-const App = () => {
+function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-      <Searchbar searchChangeHandler={(text) => window.location.replace(`results?search_query=${text}`)} />
-        <Routes>
-          <Route path="/" element={<Results />} />
-          <Route path="results" element={<Results />} />
-          <Route path="watch" element={<Results />} />
-        </Routes>
-      </BrowserRouter>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          You can start your app here
+        </p>
+        <p>
+          Or get hypnotized by this nice circly thingy
+        </p>
+      </header>
     </div>
   );
-};
+}
 
 export default App;
